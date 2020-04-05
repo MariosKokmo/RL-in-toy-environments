@@ -7,7 +7,7 @@ Created on Thu Apr  2 19:45:07 2020
 
 import numpy as np
 
-def create_world (height, width, reward, initial, final_reward, cliff=False):
+def create_world (height, width, reward, initial, final_reward, cliff=False, simple=True):
     """
     
 
@@ -38,24 +38,30 @@ def create_world (height, width, reward, initial, final_reward, cliff=False):
     """
     rewards = reward[0] * np.ones((height,width))
     if cliff:
-        rewards[0][:]=reward[1]
-        rewards[height//2][:width//2]=reward[1]
-        rewards[-2][-width//2 + 1:]=reward[1]
+        if simple:
+            rewards[-1][:]=reward[1]
+        else:
+            rewards[0][:]=reward[1]
+            rewards[height//2][:width//2]=reward[1]
+            rewards[-2][-width//2 + 1:]=reward[1]
     rewards[initial[0],initial[1]] = reward[0]
     rewards[-1,-1] = final_reward # final state is always bottom right
-    
     grid = np.array([np.arange(width*i,width*(i+1)) for i in range(height)])
     
     return (grid,rewards)
     
 
 
-def transition(grid, rewards, state, action):
+def reset():
+    return (0,0)
+
+def transition(env, state, action):
     """
     
 
     Parameters
     ----------
+    env : tuple consisting of grid and rewards numpy arrays
     grid : 2D numpy array 
         the position on the world.
     rewards : 2D numpy array
@@ -76,9 +82,12 @@ def transition(grid, rewards, state, action):
         indicates we reached the final state.
 
     """
+    grid = env[0]
+    rewards = env[1]
     height_index = len(grid)-1
     width_index = len(grid[0])-1
     done = False
+
     
     if state[0]>height_index or state[1]>width_index:
         print("The state is out of the grid")
@@ -101,13 +110,8 @@ def transition(grid, rewards, state, action):
     # new_state_ in tupled coordinates
     new_state_ = (int(new_state/(height_index+1)), new_state % (width_index+1))
     
-    # if we reach the goal
-    if new_state == grid[-1][-1]:
+    # if we reach the goal or we fall down the cliff
+    if new_state == grid[-1][-1] or rewards[new_state_[0],new_state_[1]] == -100:
         done = True
     
     return (new_state_, reward, done)
-
-# recommend that grid should be bigger than 5x5
-env = create_world(5,5,(-1,-100),(2,1),100,True)
-print(env[0],env[1])
-print(transition(env[0],env[1],(4,4),1))
