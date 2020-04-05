@@ -7,17 +7,10 @@ We have constructed a custom grid world that can be configured to include a "sim
 We also consider a custom initial state, but the goal state is always thought to be the bottom right corner of the grid world.
 
 An example of a simple-cliff grid is as follows:
-[[  -1.   -1.   -1.   -1.   -1.]
- [  -1.   -1.   -1.   -1.   -1.]
- [  -1.   -1.   -1.   -1.   -1.]
- [  -1.   -1.   -1.   -1.   -1.]
- [-100. -100. -100. -100.  100.]]
+
+
+
  
  While a more complex one is:
- [[  -1. -100. -100. -100. -100.]
- [  -1.   -1.   -1.   -1.   -1.]
- [-100. -100.   -1.   -1.   -1.]
- [  -1.   -1.   -1. -100. -100.]
- [  -1.   -1.   -1.   -1.  100.]]
- 
+
  Note that in the complex one we have the initial state at the left-top corner, while there is a cliff next to it as well as in front of it. The goal state (bottom-right) has a reward of +100 hidden behind a cliff.
