@@ -15,3 +15,7 @@ An example of a simple-cliff grid is as follows:
 ![ComplexGrid](complexgrid.PNG)
 
  Note that in the complex one we have the initial state at the left-top corner, while there is a cliff next to it as well as in front of it. The goal state (bottom-right) has a reward of +100 hidden behind a cliff.
+ 
+ Using a SARSA trained agent, we can see that the simple problem without a cliff is solved very easily. (see the scores over time below)
+
+![NoCliff](no_cliff.PNG)
