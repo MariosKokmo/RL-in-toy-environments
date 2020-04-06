@@ -122,9 +122,10 @@ class world():
         
         # new_state is an integer
         # new_state_ in tupled coordinates
+        
         if height_index >= width_index:
             for i in range(height_index+1):
-                if i*(width_index+1)<=new_state and new_state <= (i+1)*width_index:
+                if (i*(width_index+1)<=new_state) and (new_state < (i+1)*(width_index+1)):
                     new_state_ = (i,(new_state % (width_index+1)))
                     break
         else:
@@ -133,7 +134,7 @@ class world():
                     new_state_ = (i,(new_state % (width_index+1)))
                     break
             
-        print(new_state, new_state_)
+        
         # if we reach the goal or we fall down the cliff
         if new_state == grid[-1][-1] or rewards[new_state_[0],new_state_[1]] == -100:
             done = True
