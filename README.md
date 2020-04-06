@@ -18,4 +18,4 @@ An example of a simple-cliff grid is as follows:
  
  Using a SARSA trained agent, we can see that the simple problem without a cliff is solved very easily. (see the scores over time below)
 
-![NoCliff](no_cliff.PNG)
+![NoCliff](no_cliff.png)
