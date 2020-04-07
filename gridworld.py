@@ -9,11 +9,12 @@ import numpy as np
 
 class world():
     
-    def __init__(self,height, width, reward, initial, final_reward, cliff=False, simple=True):
+    def __init__(self,height, width, reward, initial, final_state, final_reward, cliff=False, simple=True):
         self.height = height
         self.width = width
         self.reward = reward
         self.initial = initial
+        self.final_state = final_state
         self.final_reward = final_reward
         self.cliff = cliff
         self.simple = simple
@@ -67,7 +68,7 @@ class world():
 
 
     def reset(self):
-        return (0,0)
+        return self.initial
     
     def transition(self,env, state, action):
         """
@@ -101,7 +102,7 @@ class world():
         height_index = len(grid)-1
         width_index = len(grid[0])-1
         done = False
-    
+        
         
         if state[0]>height_index or state[1]>width_index:
             print("The state is out of the grid")
@@ -136,7 +137,7 @@ class world():
             
         
         # if we reach the goal or we fall down the cliff
-        if new_state == grid[-1][-1] or rewards[new_state_[0],new_state_[1]] == -100:
+        if (new_state_ == self.final_state) or (rewards[new_state_[0],new_state_[1]] == self.reward[1]):
             done = True
         
         return (new_state_, reward, done)
