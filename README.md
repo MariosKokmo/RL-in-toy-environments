@@ -33,3 +33,18 @@ We see that the problem is solved fairly easily.
 The values of each position in the grid is given below.
 
 ![SimpleCliffvalues](SARSA_simple_cliff_values.PNG)
+
+
+The last and most complex (out of the three) grids is shown below.
+
+![ComplexCliffgrid](SARSA_complex_cliff_grid.PNG)
+
+while the scores are:
+
+![SimpleCliff](SARSA_complex_cliff.png)
+
+and the corresponding values:
+
+![SimpleCliffvalues](SARSA_simple_cliff_values.PNG)
+
+as expected it took a lot more episodes to solve the complex grid (starting top left), but was eventually a success.
