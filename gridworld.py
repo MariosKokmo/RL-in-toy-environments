@@ -137,7 +137,7 @@ class world():
             
         
         # if we reach the goal or we fall down the cliff
-        if (new_state_ == self.final_state) or (rewards[new_state_[0],new_state_[1]] == self.reward[1]):
+        if (state == self.final_state) or (rewards[state[0],state[1]] == self.reward[1]):
             done = True
         
         return (new_state_, reward, done)
