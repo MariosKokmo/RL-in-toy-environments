@@ -45,6 +45,6 @@ while the scores are:
 
 and the corresponding values:
 
-![SimpleCliffvalues](SARSA_simple_cliff_values.PNG)
+![SimpleCliffvalues](SARSA_complex_cliff_values.PNG)
 
 as expected it took a lot more episodes to solve the complex grid (starting top left), but was eventually a success.
