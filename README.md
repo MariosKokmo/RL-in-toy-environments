@@ -19,3 +19,17 @@ An example of a simple-cliff grid is as follows:
  Using a SARSA trained agent, we can see that the simple problem without a cliff is solved very easily. (see the scores over time below)
 
 ![NoCliff](no_cliff.png)
+
+
+Another example is that of a simple cliff. The initial state is the top left position of the grid and the final remains the bottom right.
+
+![SimpleCliffgrid](SARSA_simple_cliff_grid.PNG)
+
+and the solution scores within 20000 episodes (10 seconds of computation time) is:
+
+![SimpleCliff](SARSA_simple_cliff.png)
+
+We see that the problem is solved fairly easily. 
+The values of each position in the grid is given below.
+
+![SimpleCliffvalues](SARSA_simple_cliff_values.PNG)
