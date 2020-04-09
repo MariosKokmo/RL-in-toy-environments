@@ -8,43 +8,43 @@ We also consider a custom initial state, but the goal state is always thought to
 
 An example of a simple-cliff grid is as follows:
 
-![SimpleGrid](simplegrid.PNG)
+![SimpleGrid](images/simplegrid.PNG)
 
  While a more complex one is:
  
-![ComplexGrid](complexgrid.PNG)
+![ComplexGrid](images/complexgrid.PNG)
 
  Note that in the complex one we have the initial state at the left-top corner, while there is a cliff next to it as well as in front of it. The goal state (bottom-right) has a reward of +100 hidden behind a cliff.
  
  Using a SARSA trained agent, we can see that the simple problem without a cliff is solved very easily. (see the scores over time below)
 
-![NoCliff](no_cliff.png)
+![NoCliff](images/no_cliff.png)
 
 
 Another example is that of a simple cliff. The initial state is the top left position of the grid and the final remains the bottom right.
 
-![SimpleCliffgrid](SARSA_simple_cliff_grid.PNG)
+![SimpleCliffgrid](images/SARSA_simple_cliff_grid.PNG)
 
 and the solution scores within 20000 episodes (10 seconds of computation time) is:
 
-![SimpleCliff](SARSA_simple_cliff.png)
+![SimpleCliff](images/SARSA_simple_cliff.png)
 
 We see that the problem is solved fairly easily. 
 The values of each position in the grid is given below.
 
-![SimpleCliffvalues](SARSA_simple_cliff_values.PNG)
+![SimpleCliffvalues](images/SARSA_simple_cliff_values.PNG)
 
 
 The last and most complex (out of the three) grids is shown below.
 
-![ComplexCliffgrid](SARSA_complex_cliff_grid.PNG)
+![ComplexCliffgrid](images/SARSA_complex_cliff_grid.PNG)
 
 while the scores are:
 
-![SimpleCliff](SARSA_complex_cliff.png)
+![SimpleCliff](images/SARSA_complex_cliff.png)
 
 and the corresponding values:
 
-![SimpleCliffvalues](SARSA_complex_cliff_values.PNG)
+![SimpleCliffvalues](images/SARSA_complex_cliff_values.PNG)
 
 as expected it took a lot more episodes to solve the complex grid (starting top left), but was eventually a success.
