@@ -25,9 +25,9 @@ Another example is that of a simple cliff. The initial state is the top left pos
 
 ![SimpleCliffgrid](images/SARSA_simple_cliff_grid.PNG)
 
-and the solution scores within 20000 episodes (10 seconds of computation time) is:
+and the solution scores within 10000 episodes (less than 10 seconds of computation time) is shown below. The orange curve shows the average score accumulated over the last 4 episodes at each time.
 
-![SimpleCliff](images/SARSA_simple_cliff.png)
+![SimpleCliff](images/SARSA_simple_cliff_scores_avg.png)
 
 We see that the problem is solved fairly easily. 
 The values of each position in the grid is given below.
@@ -41,7 +41,7 @@ The last and most complex (out of the three) grids is shown below.
 
 while the scores are:
 
-![SimpleCliff](images/SARSA_complex_cliff.png)
+![SimpleCliff](images/SARSA_complex_cliff_scores_avg.png)
 
 and the corresponding values:
 
