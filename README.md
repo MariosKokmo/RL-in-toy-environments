@@ -1,4 +1,4 @@
-# RL-in-toy-environments
+## RL-in-toy-environments
 
 This projects consists of simple toy-worlds for RL agents that have been constructed from scratch. The RL agent will try each time to find the optimal strategy implementing various algorithms.
 The 2D grid worlds allow for 4 discrete actions, while returning a reward that is chosen by the user at each instantiation of the problem.
@@ -16,7 +16,9 @@ An example of a simple-cliff grid is as follows:
 
  Note that in the complex one we have the initial state at the left-top corner, while there is a cliff next to it as well as in front of it. The goal state (bottom-right) has a reward of +100 hidden behind a cliff.
  
- Using a SARSA trained agent, we can see that the simple problem without a cliff is solved very easily. (see the scores over time below)
+ # SARSA
+ 
+ Using a SARSA trained agent, we can see that the simple problem without a cliff is solved very easily. (see the scores over episodes below)
 
 ![NoCliff](images/no_cliff.png)
 
@@ -30,7 +32,7 @@ and the solution scores within 10000 episodes (less than 10 seconds of computati
 ![SimpleCliff](images/SARSA_simple_cliff_scores_avg.png)
 
 We see that the problem is solved fairly easily. 
-The values of each position in the grid is given below.
+The value of each position in the grid is given below.
 
 ![SimpleCliffvalues](images/SARSA_simple_cliff_values.PNG)
 
@@ -48,3 +50,5 @@ and the corresponding values:
 ![SimpleCliffvalues](images/SARSA_complex_cliff_values.PNG)
 
 as expected it took a lot more episodes to solve the complex grid (starting top left), but was eventually a success.
+
+# Monte Carlo
