@@ -51,4 +51,13 @@ and the corresponding values:
 
 as expected it took a lot more episodes to solve the complex grid (starting top left), but was eventually a success.
 
+# A few words about the implementation:
+For detailed description on the implementation, check the code comments. However, just to give an overview we will discuss here some key points of the implementation.
+
+1) The agent is an instance of a class. We use a dictionary as our data structure that keeps the values for the actions (Q-table). Each state is a key in the dictionary and the corresponding value is a list of length equal to the number of possible actions. At first the agent knows nothing about the structure of the environment (other than it is 2D, so that each key in the table is a 2-tuple). While the currently visited state is not in the dictionary, we add the entry and initialise the value to a 1D array of zeros. The agent can choose an action and update its table of values.
+
+2) The environment is simply a 2D grid (created as a numpy array in gridworld.py). The class has functions that allow it to be created, reset and return rewards to the agent so that the update can be done after a transition. It accepts as parameters the size of the grid, the initial and goal state, as well as the rewards of each position according to whether it is a simple step, a cliff or the goal. There is also a provision to configure the cliff as simple or complex.
+
+3) The experiment run just consists of two loops. One loop for the number of episodes and an inner loop that keeps on running until we reach a terminal state or the maximum number of steps for the episode (hyperparameter)
+
 # Monte Carlo
