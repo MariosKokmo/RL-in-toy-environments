@@ -61,3 +61,5 @@ For detailed description on the implementation, check the code comments. However
 3) The experiment run just consists of two loops. One loop for the number of episodes and an inner loop that keeps on running until we reach a terminal state or the maximum number of steps for the episode (hyperparameter)
 
 # Monte Carlo
+
+The Monte Carlo method is a method that needs no prior knowledge of the environment.
