@@ -60,6 +60,9 @@ For detailed description on the implementation, check the code comments. However
 
 3) The experiment run just consists of two loops. One loop for the number of episodes and an inner loop that keeps on running until we reach a terminal state or the maximum number of steps for the episode (hyperparameter)
 
+# Q-Learning
+With a slight modification to the way the actions are chosen in the SARSA algorithm, we implement what is known as Q-learning (aka SARSA-max). The idea is that instead of using an epsilon greedy policy for the action selction, we always select the one that maximizes the Q value for a given state (that is we are completely greedy). For the specific problem as we can see below, we achieve a solution a lot faster.
+
 # Monte Carlo
 
 The Monte Carlo method is a method that needs no prior knowledge of the environment.
