@@ -67,15 +67,7 @@ With a slight modification to the way the actions are chosen in the SARSA algori
 
 And the Q table is as follows:
 
-[29.1682229 | 0.00000000 | 0.00000000 | 0.00000000 | 0.00000000 ]
-
-[44.5676366 | 60.8375744 | 75.6531777 |-0.73507071 |-0.689060878]
-
-[0.00000000 | 0.00000000 | 87.0330417 |-0.61973693 |-0.650803316]
-
-[-0.0498010 |-0.06204231 | 94.2541643 | 0.00000000 | 0.00000000 ]
-
-[-0.0398010 |-0.03980000 | 98.0438873 | 99.8761090 | 0.00000000 ]
+![ComplexGridCliffTable](images/Q_learning_complex_cliff_values.png)
 
 # Monte Carlo
 
