@@ -1,4 +1,4 @@
-## RL-in-toy-environments
+# RL-in-toy-environments
 
 This projects consists of simple toy-worlds for RL agents that have been constructed from scratch. The RL agent will try each time to find the optimal strategy implementing various algorithms.
 The 2D grid worlds allow for 4 discrete actions, while returning a reward that is chosen by the user at each instantiation of the problem.
@@ -16,7 +16,7 @@ An example of a simple-cliff grid is as follows:
 
  Note that in the complex one we have the initial state at the left-top corner, while there is a cliff next to it as well as in front of it. The goal state (bottom-right) has a reward of +100 hidden behind a cliff.
  
- # SARSA
+ ## SARSA
  
  Using a SARSA trained agent, we can see that the simple problem without a cliff is solved very easily. (see the scores over episodes below)
 
@@ -51,7 +51,7 @@ and the corresponding values:
 
 as expected it took a lot more episodes to solve the complex grid (starting top left), but was eventually a success.
 
-# A few words about the implementation:
+### A few words about the implementation:
 For detailed description on the implementation, check the code comments. However, just to give an overview we will discuss here some key points of the implementation.
 
 1) The agent is an instance of a class. We use a dictionary as our data structure that keeps the values for the actions (Q-table). Each state is a key in the dictionary and the corresponding value is a list of length equal to the number of possible actions. At first the agent knows nothing about the structure of the environment (other than it is 2D, so that each key in the table is a 2-tuple). While the currently visited state is not in the dictionary, we add the entry and initialise the value to a 1D array of zeros. The agent can choose an action and update its table of values.
@@ -60,7 +60,7 @@ For detailed description on the implementation, check the code comments. However
 
 3) The experiment run just consists of two loops. One loop for the number of episodes and an inner loop that keeps on running until we reach a terminal state or the maximum number of steps for the episode (hyperparameter)
 
-# Q-Learning
+## Q-Learning
 With a slight modification to the way the actions are chosen in the SARSA algorithm, we implement what is known as Q-learning (aka SARSA-max). The idea is that instead of using an epsilon greedy policy for the action selction, we always select the one that maximizes the Q value for a given state (that is we are completely greedy). For the specific problem as we can see below, we achieve a solution a lot faster for the grid with the complex cliff!
 
 ![ComplexCliffgrid](images/Q_learning_complex_cliff_scores.png)
@@ -69,6 +69,6 @@ And the Q table is as follows:
 
 ![ComplexGridCliffTable](images/Q_learning_complex_cliff_values.png)
 
-# Monte Carlo
+## Monte Carlo
 
 The Monte Carlo method is a method that needs no prior knowledge of the environment.
