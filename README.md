@@ -17,12 +17,12 @@ An example of a simple-cliff grid is as follows:
  Note that in the complex one we have the initial state at the left-top corner, while there is a cliff next to it as well as in front of it. The goal state (bottom-right) has a reward of +100 hidden behind a cliff.
  
  ## SARSA
- 
+ #### No cliff
  Using a SARSA trained agent, we can see that the simple problem without a cliff is solved very easily. (see the scores over episodes below)
 
 ![NoCliff](images/SARSA_no_cliff_scores.png)
 
-
+#### Simple cliff
 Another example is that of a simple cliff. The initial state is the top left position of the grid and the final remains the bottom right.
 
 ![SimpleCliffgrid](images/SARSA_simple_cliff_grid.PNG)
@@ -36,7 +36,7 @@ The value of each position in the grid is given below.
 
 ![SimpleCliffvalues](images/SARSA_simple_cliff_values.PNG)
 
-
+#### Complex cliff
 The last and most complex (out of the three) grids is shown below.
 
 ![ComplexCliffgrid](images/SARSA_complex_cliff_grid.PNG)
